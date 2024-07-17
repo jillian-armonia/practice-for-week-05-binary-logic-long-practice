@@ -7,7 +7,20 @@ const addZeros = require('../utils/addZeros');
 /******************************************************************************/
 
 const asciiTo8bit = str => {
-  // Your code here
+  let decimal = [];
+  //1. Get the decimal value of each character using charCodeAt(index)
+  for (let i = 0; i < str.length; i++){
+    decimal.push(str.charCodeAt(i));
+  }
+
+  //2. Convert decimal to binary
+  const binary = decimal.map(n => n.toString(2))
+
+  //3. Use addZeros() to make 8-bit binary strings
+    //3a. Make sure that they have to be 8 or divisible by 8...?
+  const converted = binary.map(num => addZeros(num, 8))
+
+  return converted.join('')
 };
 
 /******************************************************************************/

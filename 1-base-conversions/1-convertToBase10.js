@@ -3,7 +3,18 @@
 /******************************************************************************/
 
 const convertToBase10 = str => {
-  // Your code here
+  //1. Check if the str is binary or hexadecimal
+  const baseCheck = str[1];
+  let slice = str.slice(2)
+
+
+  if (baseCheck === 'b'){ //2. If it starts with '0b' it is binary
+    return parseInt(slice, 2);
+
+  } else if (baseCheck === 'x'){ //3. If it starts with '0x' it is hex
+    return parseInt(slice, 16)
+  }
+
 };
 
 /******************************************************************************/
